@@ -1,0 +1,28 @@
+{
+  "name": "ubook-api",
+  "version": "1.0.0",
+  "description": "This software for booking stores strives to address the issue of books this project is build on Nodejs/express and mongodb for the database including graphQL for querying. When you are unfamiliar with an enviroment, it can be difficult to know where or how to obtain books, and selecting the right books can also be challenging. This system is designed to assist you in finding local book stores, as well as giving you the choice to order or download the book in PDF format. It also offers suggestion options in case you're unsure about which book to choose.  This is just the api if you will like to build the frontend or mobile up feel free to hit me up twitter, linkedIn or my email",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TechLateef/UBook-API.git"
+  },
+  "author": "Abdullateef Mubarak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TechLateef/UBook-API/issues"
+  },
+  "homepage": "https://github.com/TechLateef/UBook-API#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.18.2",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.6.0",
+    "http-status-codes": "^2.2.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.1.1"
+  }
+}
