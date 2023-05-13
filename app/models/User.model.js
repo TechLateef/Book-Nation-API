@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const { jsonResponse } = require("../utils/responseHelper");
+const { BadRequest } = require("../errors");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
@@ -37,6 +39,15 @@ userSchema.methods.createJWT = function () {
     process.env.JWTPRIVATEKEY,
     { expiresIn: "2h" }
   );
+};
+
+/**
+ *
+ * @param {String} pass -User Password
+ * @returns {Boolean}
+ */
+userSchema.methods.comparePassword = async function (pass) {
+  return bcrypt.compare(pass, this.password);
 };
 
 const User = mongoose.model("User", userSchema);
