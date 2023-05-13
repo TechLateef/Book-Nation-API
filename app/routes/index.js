@@ -1,3 +1,4 @@
+const { BadRequest } = require("../errors");
 const AuthRouter = require("./Auth.route");
 
 /**

@@ -26,16 +26,18 @@ const logIn = catchAsync(async (req, res) => {
   if (!email || !password) {
     jsonResponse(StatusCodes.BAD_REQUEST, {}, res);
   }
+  //check if user Exist
   const isUser = await User.findOne({ email });
 
   if (!isUser) {
-    throw new UnAuthorized("Invalid Credentials");
+    throw new BadRequest("check credentials");
   }
-
+  //if user exist compare the password
   const isPassword = await isUser.comparePassword(password);
   if (!isPassword) {
-    throw new UnAuthorized("Invalid Credentials");
+    throw new BadRequest("check credentials");
   }
+  //if Correct password log user in
   createAndSendToken(isUser, 200, "login successful", res);
 });
 

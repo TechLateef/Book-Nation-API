@@ -1,15 +1,15 @@
 const { StatusCodes } = require("http-status-codes");
 const CustomError = require("./custormError");
 
-class ServerError extends CustomError {
+class NotFound extends CustomError {
   constructor(
     name,
-    statusCode = StatusCodes.UNAUTHORIZED,
+    statusCode = StatusCodes.NOT_FOUND,
     isOperational = true,
-    message = "Internal Server Error"
+    message = "Not Found"
   ) {
     super(name, statusCode, isOperational, message);
   }
 }
 
-module.exports = ServerError;
+module.exports = NotFound;

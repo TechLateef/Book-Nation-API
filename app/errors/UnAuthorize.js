@@ -2,9 +2,13 @@ const { StatusCodes } = require("http-status-codes");
 const CustomError = require("./custormError");
 
 class UnAuthorized extends CustomError {
-  constructor(message) {
-    super(message);
-    this.StatusCodes = StatusCodes.UNAUTHORIZED;
+  constructor(
+    name,
+    statusCode = StatusCodes.UNAUTHORIZED,
+    isOperational = true,
+    message = "you are not UnAuthorize"
+  ) {
+    super(name, statusCode, isOperational, message);
   }
 }
 

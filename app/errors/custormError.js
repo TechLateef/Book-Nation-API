@@ -1,7 +1,13 @@
-class CustormError extends Error {
-  constructor(message) {
+class CustomError extends Error {
+  constructor(name, statusCode, isOperational, message) {
     super(message);
+
+    Object.setPrototypeOf(this, new.target.prototype);
+    this.name = name;
+    this.statusCode = statusCode;
+    this.isOperational = isOperational;
+    Error.captureStackTrace(this);
   }
 }
 
-module.exports = CustormError;
+module.exports = CustomError;

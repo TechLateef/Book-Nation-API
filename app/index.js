@@ -8,4 +8,6 @@ require("./middlewares")(app);
 //Register Routers
 require("./routes")(app);
 
+//Register handler
+require("./errors/GlobalHandler")(app);
 module.exports = app;
