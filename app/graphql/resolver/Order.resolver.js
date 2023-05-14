@@ -1,7 +1,6 @@
 const { ServerError, NotFound } = require("../../errors");
 const Order = require("../../models/Order.model");
 const User = require("../../models/User.model");
-const Book = require("../../models/Book.model");
 
 /**
  *
