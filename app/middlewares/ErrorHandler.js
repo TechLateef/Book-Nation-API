@@ -17,6 +17,7 @@ const errorHandler = (err, req, res, next) => {
   } else if ((err.name = "CastError")) {
     customError.msg = "Not Found";
     customError.statusCode = 404;
+    console.log(err);
   }
   const response = {
     msg: customError.msg,
