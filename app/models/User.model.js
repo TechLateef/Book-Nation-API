@@ -21,7 +21,11 @@ const userSchema = new Schema(
     },
     phone: String,
   },
-  { timestamps: true }
+  { timestamps: true ,
+  discriminatorKey: 'kind',
+  toJSON: { virtuals: true },
+     toObject: { virtuals: true },
+}
 );
 
 userSchema.pre("save", async function (next) {

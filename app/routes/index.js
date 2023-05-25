@@ -3,6 +3,7 @@ const AuthRouter = require("./Auth.route");
 const { graphqlHTTP } = require("express-graphql");
 const graphqlResolver = require("../graphql/resolver/index");
 const graphqlSchema = require("../graphql/schema/index");
+const storeRouter = require("./Store.route");
 
 /**
  *
@@ -23,6 +24,7 @@ const routeRegister = (app) => {
   );
 
   app.use("/api/v1/auth", AuthRouter);
+  app.use("api/v1/store", storeRouter);
 };
 
 module.exports = routeRegister;
