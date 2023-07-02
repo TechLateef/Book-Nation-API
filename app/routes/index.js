@@ -4,6 +4,7 @@ const { graphqlHTTP } = require("express-graphql");
 const graphqlResolver = require("../graphql/resolver/index");
 const graphqlSchema = require("../graphql/schema/index");
 const storeRouter = require("./Store.route");
+const uploadRoute = require("./upload.route");
 
 /**
  *
@@ -24,6 +25,7 @@ const routeRegister = (app) => {
   );
 
   app.use("/api/v1/auth", AuthRouter);
+  app.use("api/v1/upload", uploadRoute);
   app.use("api/v1/store", storeRouter);
 };
 
